@@ -1,0 +1,43 @@
+ru:
+  both:
+    to_recipes: 'К рецептам'
+  session:
+    login:
+      hello: "Здравствуйте!"
+      if_not_reg: "Если вы еще не зарегистрированы..."
+      create_user: "Создать аккаунт"
+      name: "Имя пользователя"
+      pass: "Пароль"
+      button_login: 'Войти'
+      button_logout: 'Выйти'
+  posts:
+    index:
+      all_recipes: "Рецепты"
+      in_acc: "Вы вошли как "
+      create_recipe: "Создать рецепт"
+      link_logout: "Выйти"
+      link_login: "Войти"
+      users_list: "Список пользователей"
+    show:
+      au: "Автор"
+      edit_recipe: "Обновить рецепт"
+      name: "Название"
+      time: "Время готовки"
+      ingr: "Ингредиенты"
+      way: "Пошагово: "
+      pic: "Название картинки"
+      button_upd: "Обновить"
+      button_del: "Удалить"
+    new:
+      new_recipe: "Новый рецепт"
+      button_save: "Сохранить"
+    edit:
+      ed: "Редактирование"
+  users:
+    new: "Новый пользователь"
+    index:
+      users_: "Пользователи"
+      link_show: "Посмотреть"
+      link_update: "Обновить"
+      link_destroy: "Удалить"
+      log_page: "Страница входа"

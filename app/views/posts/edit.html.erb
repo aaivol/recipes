@@ -1,0 +1,11 @@
+<h1><%= t '.ed' %></h1>
+
+<%= render 'form', post: @post %>
+
+<div class="container">
+  <div class="row">
+    <h3><%= link_to 'Show', @post, class:"main-text" %></h3>
+    <h3 style="margin-left: 40px;"><%= link_to 'Back', posts_path, class:"main-text" %></h3>
+  </div>
+</div>
+<br/>

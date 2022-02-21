@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="look">
+    <% if @post.picname == "" %>
+      <%= image_tag("pics/none.jpg", class: "img-look") %>
+    <% else %>
+      <%= image_tag("pics/#{@post.picname}", class: "img-look") %>
+    <% end %>
+  </div>
+  <h1 class="centered" style="color: white"><%= @post.name %></h1>
+  <h2 class="bottom" style="color: white"><%= @post.time %></h2>
+</div>
+<br/><br/>
+<h3>
+  <strong><%= t '.au' %>:</strong>
+  <%= @post.author %>
+</h3>
+<h2><%= t '.ingr' %>:</h2>
+<h3><%= @post.ingr %></h3>
+<br/><br/>
+<h3><%= @post.way %></h3>
+<br/><br/>
+<div class="container">
+  <div class="row">
+    <% if signed_in? && current_user.username == @post.author %>
+    <h2><%= link_to t('.edit_recipe'), edit_post_path(@post), class:"main-text"%></h2>
+    <h2 style="margin-left: 40px"><%= link_to t('.button_del'), @post, method: :delete,
+                      data: {confirm: 'Are you sure?'}, class:"text-danger" %></h2>
+    <% end %>
+    <h2 style="margin-left: auto; margin-right: 0px"><%= link_to t('both.to_recipes'),
+                                                                 posts_url, class:"main-text" %></h2>
+  </div>
+</div>
+<br/>
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipenew</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+        body {
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+        div.all {
+            width: 1200px;
+            height: max-content;
+        }
+        div.item_ {
+            position: relative;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            height: 300px;
+            width: 300px;
+            transition: transform .8s;
+        }
+        div.item_:hover {
+            transform: scale(1.1);
+            -webkit-filter: brightness(70%);
+            transition: 0.5s;
+        }
+        .img-circular{
+            display: flex;
+            -webkit-border-radius: 40px;
+        }
+        span.name_ {
+            text-align: center;
+            font-size: xx-large;
+            color: #ffffff;
+        }
+        div.look {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+        .img-look {
+            width: 1400px;
+            height: 400px;
+            object-fit: cover;
+            filter: blur(10px);
+            -webkit-filter: blur(10px) brightness(0.5);
+            margin-top: -10px;
+            margin-left: -10px;
+
+        }
+        .main-text {
+            color: #950da4;
+        }
+        .main-text:hover {
+            color: #6826ec;
+            text-decoration: none;
+            transition: 0.5s;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+
+        }
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .bottom {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+        }
+        .del {
+            width: 40px;
+            height: 40px;
+            margin-top: 30px;
+            margin-left: 50px;
+        }
+        .bordered{
+            background-color: #fcfafb;
+            border: 3px solid #c8b6d3;
+            -webkit-border-radius: 20px;
+            margin-top: 20px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

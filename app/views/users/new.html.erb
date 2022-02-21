@@ -1,0 +1,8 @@
+<h1><%= t 'users.new' %></h1>
+
+<%= render 'form', user: @user %>
+<br/>
+
+<h2><%= link_to t('users.index.users_'), users_url, class: 'main-text'%></h2>
+<br/>
+<h2><%= link_to t('both.to_recipes'), posts_url, class: 'main-text'%></h2>

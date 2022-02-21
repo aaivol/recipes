@@ -1,0 +1,43 @@
+en:
+  both:
+    to_recipes: 'Back to recipes'
+  session:
+    login:
+      hello: "Hello!"
+      if_not_reg: "If you're not registered yet..."
+      create_user: "Create new user"
+      name: "Username"
+      pass: "Password"
+      button_login: "Log in"
+      button_logout: "Log out"
+  posts:
+    index:
+      all_recipes: "Recipes"
+      in_acc: "You're logged in as "
+      create_recipe: "Create new recipe"
+      link_logout: "Log out"
+      link_login: "Log in"
+      users_list: "Users list"
+    show:
+      au: "Author"
+      edit_recipe: "Update recipe"
+      name: "Name of meal"
+      time: "Cooking time"
+      ingr: "Ingredients"
+      way: "Do: "
+      pic: "Picture name"
+      button_upd: "Update"
+      button_del: "Delete"
+    new:
+      new_recipe: "New recipe"
+      button_save: "Save"
+    edit:
+      ed: "Editing"
+  users:
+    new: "New User"
+    index:
+      users_: "Users"
+      link_show: "Show"
+      link_update: "Update"
+      link_destroy: "Destroy"
+      log_page: "Login page"

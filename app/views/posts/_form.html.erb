@@ -1,0 +1,36 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label t'posts.show.name' %>
+    <%= form.text_field :name, class:"bordered"%>
+    <br/>
+    <%= form.hidden_field :author, value: current_user.username %>
+    <%= form.label t'posts.show.time' %>
+    <%= form.text_field :time , class:"bordered"%>
+    <br/><br/>
+    <%= form.label t'posts.show.ingr' %>
+    <%= form.rich_text_area :ingr %>
+    <br/>
+    <%= form.label t 'posts.show.way' %>
+    <%= form.rich_text_area :way %>
+    <br/>
+    <%= form.label t 'posts.show.pic' %>
+    <%= form.text_field :picname , class:"bordered"%>
+  </div>
+    <br/><br/>
+  <div class="actions">
+    <%= form.submit 'Done', class:"btn btn-outline-success"%>
+  </div>
+    <br/>
+<% end %>

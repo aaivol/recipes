@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <h1><%= t '.all_recipes' %></h1>
+      <h2 style="margin-left: -90px"><%= link_to 'EN', root_path(locale: :en), class:"main-text"%></h2>
+      <h2 style="margin-left: -90px"><%= link_to 'RU', root_path(locale: :ru), class:"main-text" %></h2>
+    </div>
+    <div class="col-6"></div>
+    <% if signed_in? %>
+    <div class="col-4">
+      <h4 class="text-secondary" style="text-align: right"><%= t('.in_acc') + current_user.username %></h4>
+      <h2 style="text-align: right"><%= link_to t('.create_recipe'), new_post_url, class:"main-text" %></h2>
+      <h2 style="text-align: right"><%= link_to t('.link_logout'), session_logout_url, class:"main-text"%></h2>
+    </div>
+    <% else %>
+      <h2 style="text-align: right"><%= link_to t('.link_login'), session_login_url, class:"main-text" %></h2>
+    <% end %>
+  </div>
+</div>
+
+<br/>
+
+<div class="all container", id="all_location">
+  <div class="row justify-content-around">
+    <% @posts.each do |recipe| %>
+      <% recipe.picname = 'none.jpg' if recipe.picname ==""%>
+      <div class="col-4">
+        <div class="item_">
+          <%=link_to image_tag("pics/#{recipe.picname}", width: "300px", height: "300px",
+                               class: "img-circular", title: "#{recipe.name}"),
+                     "/posts/#{recipe.id}" %>
+          <h5><%= recipe.name %></h5>
+        </div>
+        <br/>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br/><br/>
+<h2 style="text-align: right"><%= link_to t('session.login.create_user'), new_user_url, class:"main-text"%></h2>
+<br/><br/>

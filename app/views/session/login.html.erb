@@ -1,0 +1,44 @@
+<style>
+    body {
+        background: url(<%= image_url 'pics/none.jpg' %>) no-repeat center;
+        -webkit-background-size: cover;
+    }
+    div.main {
+        margin-left: -70px;
+        width: 1200px;
+        height: 700px;
+        backdrop-filter: blur(150px);
+    }
+    .m {
+        margin-left: 100px;
+        margin-top: 5px;
+    }
+    .inp {
+        border: 4px solid #b9b9e3;
+        -webkit-border-radius: 20px;
+    }
+    .t {
+        color: white;
+    }
+</style>
+
+<div class="main">
+  <h1 class="m t"><%= t '.hello' %></h1><br/>
+
+  <h2 class="m t"><%= t '.if_not_reg' %></h2>
+  <h3 class="m t"><%= link_to t('.create_user'), new_user_path, class: 'btn btn-outline-light' %></h3><br/>
+
+  <%= form_with url: session_create_url, method: :post, local: true do |form| %>
+    <h3 class="m t"><%= form.label  t '.name'%></h3>
+    <h3 class="m"><%= form.text_field :username, class: "inp" %><br/><br/></h3>
+    <h3 class="m t"><%= form.label t '.pass' %></h3>
+    <h3 class="m"><%= form.password_field :password, class: "inp" %></h3><br/><br/>
+    <%= form.submit t('.button_login'), class: 'btn btn-success m'%><br/><br/>
+  <% end %>
+
+  <button type="button" class="btn btn-light m">
+    <%= link_to t('.button_logout'), :controller => :session, :action => :logout%>
+  </button>
+  <br/><br/><br/><br/>
+  <h3 class="m"><%=link_to  t('both.to_recipes'), posts_url, class:"t" %></h3>
+</div>

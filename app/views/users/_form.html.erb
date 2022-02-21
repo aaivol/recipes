@@ -1,0 +1,39 @@
+<style>
+    .inp {
+        border: 4px solid #b9b9e3;
+        -webkit-border-radius: 20px;
+    }
+</style>
+
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <h3><%= t 'session.login.name' %></h3>
+    <h3><%= form.text_field :username, class: "inp" %></h3>
+  </div><br/>
+
+  <div class="field">
+    <h3><%= t 'session.login.pass'%></h3>
+    <h3><%= form.password_field :password, class: "inp" %></h3>
+  </div><br/>
+
+  <div class="field">
+    <h3><%= t 'session.login.pass' %></h3>
+    <h3><%= form.password_field :password_confirmation, class: "inp" %></h3>
+  </div><br/>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-outline-success" %>
+  </div>
+<% end %>
